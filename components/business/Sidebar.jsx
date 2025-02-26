@@ -19,23 +19,23 @@ function Sidebar() {
   const menuItems = [
     {
       name: "Dashboard",
-      href: "/business/dashboard",
+      href: "/portfolio/dashboard",
       icon: <FaTachometerAlt />,
     },
     // {
     //   name: "Orders & Sales",
-    //   href: "/business/orders",
+    //   href: "/portfolio/orders",
     //   icon: <FaShoppingCart />,
     // },
-    // { name: "Customers", href: "/business/customers", icon: <FaUsers /> },
+    // { name: "Customers", href: "/portfolio/customers", icon: <FaUsers /> },
     {
       name: "Products & Inventory",
-      href: "/business/products",
+      href: "/portfolio/products",
       icon: <FaBox />,
     },
-    // { name: "Payments", href: "/business/payments", icon: <FaMoneyBillWave /> },
-    // { name: "Reports", href: "/business/reports", icon: <FaChartBar /> },
-    { name: "Settings", href: "/business/settings", icon: <FaCog /> },
+    // { name: "Payments", href: "/portfolio/payments", icon: <FaMoneyBillWave /> },
+    // { name: "Reports", href: "/portfolio/reports", icon: <FaChartBar /> },
+    { name: "Settings", href: "/portfolio/settings", icon: <FaCog /> },
   ];
 
   return (

@@ -32,7 +32,7 @@ function Login() {
     const session = await getSession();
 
     if (session?.user?.is_business) {
-      router.push("/business/dashboard");
+      router.push("/portfolio/dashboard");
     } else {
       router.push("/employee/dashboard"); // TODO: Change this for employees
     }

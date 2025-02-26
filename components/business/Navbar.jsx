@@ -22,7 +22,7 @@ function Navbar() {
           </button>
           <ul className="dropdown-menu dropdown-menu-end">
             <li>
-              <Link className="dropdown-item" href="/business/settings">
+              <Link className="dropdown-item" href="/portfolio/settings">
                 Settings
               </Link>
             </li>
