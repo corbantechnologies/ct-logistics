@@ -58,7 +58,7 @@ function Dashboard() {
       </div>
 
       {/* Businesses Table */}
-      <div className="card shadow-sm p-4">
+      <div className="card shadow-sm p-4 mb-4">
         <h5 className="mb-3">Your Businesses</h5>
         <div className="table-responsive">
           <table className="table table-striped">
