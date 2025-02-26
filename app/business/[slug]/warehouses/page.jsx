@@ -62,48 +62,48 @@ function BusinessWarehouses() {
 
       {/* Warehouse Table */}
       <div className="card shadow-sm mb-3">
-        <div className="card-body">
-          {business?.warehouses && business?.warehouses.length > 0 ? (
-            <div className="table-responsive">
-              <table className="table table-hover align-middle">
-                <thead>
-                  <tr>
-                    <th>#</th>
-                    <th>Name</th>
-                    <th>Address</th>
-                    <th>Phone</th>
-                    <th>Email</th>
-                    <th>Contact Person</th>
-                    <th>Reference</th>
+        {business?.warehouses && business?.warehouses.length > 0 ? (
+          <div className="table-responsive">
+            <table className="table table-hover align-middle">
+              <thead>
+                <tr>
+                  <th>#</th>
+                  <th>Name</th>
+                  <th>Address</th>
+                  <th>Phone</th>
+                  <th>Email</th>
+                  <th>Contact Person</th>
+                  <th>Reference</th>
+                </tr>
+              </thead>
+              <tbody>
+                {business?.warehouses.map((warehouse, index) => (
+                  <tr key={warehouse.reference}>
+                    <td>{index + 1}</td>
+                    <td>{warehouse.name}</td>
+                    <td>{warehouse.address}</td>
+                    <td>{warehouse.phone || "N/A"}</td>
+                    <td>{warehouse.email || "N/A"}</td>
+                    <td>
+                      <strong>{warehouse.contact_person}</strong>
+                      <br />
+                      <small>{warehouse.contact_person_phone || "N/A"}</small>
+                      <br />
+                      <small>{warehouse.contact_person_email || "N/A"}</small>
+                    </td>
+                    <td>{warehouse.reference}</td>
                   </tr>
-                </thead>
-                <tbody>
-                  {business?.warehouses.map((warehouse, index) => (
-                    <tr key={warehouse.reference}>
-                      <td>{index + 1}</td>
-                      <td>{warehouse.name}</td>
-                      <td>{warehouse.address}</td>
-                      <td>{warehouse.phone || "N/A"}</td>
-                      <td>{warehouse.email || "N/A"}</td>
-                      <td>
-                        <strong>{warehouse.contact_person}</strong>
-                        <br />
-                        <small>{warehouse.contact_person_phone || "N/A"}</small>
-                        <br />
-                        <small>{warehouse.contact_person_email || "N/A"}</small>
-                      </td>
-                      <td>{warehouse.reference}</td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
-          ) : (
+                ))}
+              </tbody>
+            </table>
+          </div>
+        ) : (
+          <div className="card-body">
             <div className="alert alert-info text-center" role="alert">
               No warehouses found.
             </div>
-          )}
-        </div>
+          </div>
+        )}
       </div>
     </div>
   );
