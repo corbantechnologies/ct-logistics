@@ -1,6 +1,5 @@
 "use client";
 import LoadingSpinner from "@/components/dashboard/LoadingSpinner";
-import AddCategory from "@/forms/categories/AddCategory";
 import AddWarehouse from "@/forms/warehouses/AddWarehouse";
 import { useFetchBusiness } from "@/hooks/business/actions";
 import { useParams } from "next/navigation";
@@ -24,8 +23,9 @@ function BusinessWarehouses() {
   if (isLoadingBusiness) {
     return <LoadingSpinner />;
   }
+
   return (
-    <div className="container mt-4">
+    <div className="container mt-4 mb-4">
       {/* Header Section */}
       <div className="d-flex justify-content-between align-items-center mb-3">
         <h3 className="fw-bold">Warehouses</h3>
@@ -37,7 +37,7 @@ function BusinessWarehouses() {
         </button>
       </div>
 
-      {/* modal of adding warehouses */}
+      {/* Modal for adding warehouses */}
       <Modal
         show={show}
         onHide={handleClose}
@@ -61,6 +61,50 @@ function BusinessWarehouses() {
       </Modal>
 
       {/* Warehouse Table */}
+      <div className="card shadow-sm mb-3">
+        <div className="card-body">
+          {business?.warehouses && business?.warehouses.length > 0 ? (
+            <div className="table-responsive">
+              <table className="table table-hover align-middle">
+                <thead>
+                  <tr>
+                    <th>#</th>
+                    <th>Name</th>
+                    <th>Address</th>
+                    <th>Phone</th>
+                    <th>Email</th>
+                    <th>Contact Person</th>
+                    <th>Reference</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {business?.warehouses.map((warehouse, index) => (
+                    <tr key={warehouse.reference}>
+                      <td>{index + 1}</td>
+                      <td>{warehouse.name}</td>
+                      <td>{warehouse.address}</td>
+                      <td>{warehouse.phone || "N/A"}</td>
+                      <td>{warehouse.email || "N/A"}</td>
+                      <td>
+                        <strong>{warehouse.contact_person}</strong>
+                        <br />
+                        <small>{warehouse.contact_person_phone || "N/A"}</small>
+                        <br />
+                        <small>{warehouse.contact_person_email || "N/A"}</small>
+                      </td>
+                      <td>{warehouse.reference}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          ) : (
+            <div className="alert alert-info text-center" role="alert">
+              No warehouses found.
+            </div>
+          )}
+        </div>
+      </div>
     </div>
   );
 }

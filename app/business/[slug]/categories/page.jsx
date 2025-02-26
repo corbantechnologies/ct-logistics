@@ -25,7 +25,7 @@ function BusinessCategories() {
   }
 
   return (
-    <div className="container mt-4">
+    <div className="container mt-4 mb-4">
       {/* Header Section */}
       <div className="d-flex justify-content-between align-items-center mb-3">
         <h3 className="fw-bold">Categories</h3>
@@ -57,7 +57,7 @@ function BusinessCategories() {
       </Modal>
 
       {/* Categories Table */}
-      <div className="card shadow-sm">
+      <div className="card shadow-sm mb-3">
         <div className="card-header bg-white text-primary">
           <h5 className="mb-0">Categories List</h5>
         </div>
@@ -65,7 +65,7 @@ function BusinessCategories() {
         {business?.categories && business?.categories.length > 0 ? (
           <div className="table-responsive">
             <table className="table table-striped table-hover mb-0">
-              <thead className="table-dark">
+              <thead>
                 <tr>
                   <th>#</th>
                   <th>Name</th>
