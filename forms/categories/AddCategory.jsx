@@ -1,7 +1,7 @@
 "use client";
 import useAxiosAuth from "@/hooks/general/useAxiosAuth";
 import { createCategory } from "@/services/categories";
-import { Formik } from "formik";
+import { Formik, Form, Field } from "formik";
 import React, { useState } from "react";
 import toast from "react-hot-toast";
 
@@ -16,7 +16,6 @@ function AddCategory({ refetch, closeModal, business }) {
           business: business?.reference,
           name: "",
         }}
-        validationSchema={validationSchema}
         onSubmit={async (values) => {
           setLoading(true);
 
@@ -41,11 +40,6 @@ function AddCategory({ refetch, closeModal, business }) {
                 name="name"
                 className="form-control"
                 placeholder="Enter category name"
-              />
-              <ErrorMessage
-                name="name"
-                component="div"
-                className="text-danger small"
               />
             </div>
 

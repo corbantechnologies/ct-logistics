@@ -28,7 +28,7 @@ function BusinessCategories() {
     <div className="container mt-4">
       {/* Header Section */}
       <div className="d-flex justify-content-between align-items-center mb-3">
-        <h2 className="fw-bold">Business Categories</h2>
+        <h3 className="fw-bold">Categories</h3>
         <button
           onClick={handleShow}
           className="btn btn-primary btn-sm shadow-sm"
