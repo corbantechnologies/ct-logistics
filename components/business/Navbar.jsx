@@ -1,6 +1,7 @@
 "use client";
+import { signOut } from "next-auth/react";
 import React from "react";
-import { FaBell, FaUserCircle } from "react-icons/fa";
+import { FaBell, FaSignOutAlt, FaUserCircle } from "react-icons/fa";
 import Link from "next/link";
 
 function Navbar() {
@@ -11,7 +12,6 @@ function Navbar() {
 
       {/* Right - Notifications & Profile */}
       <div className="d-flex align-items-center">
-        <FaBell className="fs-4 me-3 text-primary" role="button" />
         <div className="dropdown">
           <button
             className="btn btn-outline-primary dropdown-toggle"
@@ -22,17 +22,18 @@ function Navbar() {
           </button>
           <ul className="dropdown-menu dropdown-menu-end">
             <li>
-              <Link className="dropdown-item" href="/business/profile">
-                Profile
-              </Link>
-            </li>
-            <li>
-              <Link className="dropdown-item text-danger" href="/logout">
-                Logout
+              <Link className="dropdown-item" href="/business/settings">
+                Settings
               </Link>
             </li>
           </ul>
         </div>
+        <FaSignOutAlt
+          className="fs-4 ms-3 text-danger"
+          role="button"
+          title="Logout"
+          onClick={() => signOut()}
+        />
       </div>
     </nav>
   );

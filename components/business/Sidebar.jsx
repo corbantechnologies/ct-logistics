@@ -1,5 +1,6 @@
 "use client";
 import Link from "next/link";
+import { signOut } from "next-auth/react";
 import { usePathname } from "next/navigation";
 import {
   FaTachometerAlt,
@@ -16,7 +17,11 @@ function Sidebar() {
   const pathname = usePathname();
 
   const menuItems = [
-    { name: "Dashboard", href: "/business/dashboard", icon: <FaTachometerAlt /> },
+    {
+      name: "Dashboard",
+      href: "/business/dashboard",
+      icon: <FaTachometerAlt />,
+    },
     // {
     //   name: "Orders & Sales",
     //   href: "/business/orders",
@@ -53,12 +58,12 @@ function Sidebar() {
         ))}
       </ul>
       <div className="mt-auto">
-        <Link
-          href="/logout"
+        <button
+          onClick={() => signOut()}
           className="nav-link text-danger d-flex align-items-center p-2"
         >
           <FaSignOutAlt className="me-2" /> Logout
-        </Link>
+        </button>
       </div>
     </div>
   );
