@@ -60,32 +60,34 @@ function Dashboard() {
       {/* Businesses Table */}
       <div className="card shadow-sm p-4">
         <h5 className="mb-3">Your Businesses</h5>
-        <table className="table table-striped">
-          <thead>
-            <tr>
-              <th>#</th>
-              <th>Business Name</th>
-              <th>Reference</th>
-              <th>Created At</th>
-              <th>Action</th>
-            </tr>
-          </thead>
-          <tbody>
-            {businesses.map((business, index) => (
-              <tr key={business.id}>
-                <td>{index + 1}</td>
-                <td>{business.name}</td>
-                <td>{business.reference}</td>
-                <td>{new Date(business.created_at).toLocaleDateString()}</td>
-                <td>
-                  <Link href={`/business/${business?.slug}`}>
-                    <button className="btn btn-sm btn-primary">View</button>
-                  </Link>
-                </td>
+        <div className="table-responsive">
+          <table className="table table-striped">
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Business Name</th>
+                <th>Reference</th>
+                <th>Created At</th>
+                <th>Action</th>
               </tr>
-            ))}
-          </tbody>
-        </table>
+            </thead>
+            <tbody>
+              {businesses.map((business, index) => (
+                <tr key={business.id}>
+                  <td>{index + 1}</td>
+                  <td>{business.name}</td>
+                  <td>{business.reference}</td>
+                  <td>{new Date(business.created_at).toLocaleDateString()}</td>
+                  <td>
+                    <Link href={`/business/${business?.slug}`}>
+                      <button className="btn btn-sm btn-primary">View</button>
+                    </Link>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
       </div>
     </div>
   );
