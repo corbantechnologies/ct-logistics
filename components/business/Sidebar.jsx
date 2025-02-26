@@ -11,6 +11,7 @@ import {
   FaChartBar,
   FaCog,
   FaSignOutAlt,
+  FaTags,
 } from "react-icons/fa";
 import React from "react";
 import { useFetchBusiness } from "@/hooks/business/actions";
@@ -46,6 +47,11 @@ function Sidebar({ slug }) {
       name: "Products & Inventory",
       href: `/business/${slug}/products`,
       icon: <FaBox />,
+    },
+    {
+      name: "Categories",
+      href: `/business/${slug}/categories`,
+      icon: <FaTags />,
     },
     {
       name: "Stock Movement",

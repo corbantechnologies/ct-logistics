@@ -59,6 +59,14 @@ function Navbar({ slug }) {
             <li>
               <Link
                 className="dropdown-item"
+                href={`/business/${slug}/categories`}
+              >
+                Categories
+              </Link>
+            </li>
+            <li>
+              <Link
+                className="dropdown-item"
                 href={`/business/${slug}/stock-movement`}
               >
                 Stock Movement
