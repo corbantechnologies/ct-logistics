@@ -108,3 +108,22 @@ body {
 .btn-danger {
     background-color: var(--error-color);
 }
+
+/* Landing page */
+.hero-section {
+    height: 100vh;
+    background: url('/warehouse.png') no-repeat center center/cover;
+}
+
+/* Features */
+.feature-icon {
+    font-size: 3rem;
+    color: #007bff;
+}
+
+/* How it works */
+.step-box {
+    background: #f8f9fa;
+    padding: 20px;
+    border-radius: 10px;
+}
