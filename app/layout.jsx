@@ -1,5 +1,6 @@
 "use client";
 import React from "react";
+import { Analytics } from "@vercel/analytics/react";
 import "bootstrap/dist/css/bootstrap.css";
 import "bootstrap-icons/font/bootstrap-icons.css";
 import "./globals.css";
@@ -21,7 +22,10 @@ export default function RootLayout({ children }) {
       <body>
         <Toaster position="top-center" />
         <NextAuthProvider>
-          <TanstackQueryProvider>{children}</TanstackQueryProvider>
+          <TanstackQueryProvider>
+            {children}
+            <Analytics />
+          </TanstackQueryProvider>
         </NextAuthProvider>
         <BootstrapClient />
       </body>
