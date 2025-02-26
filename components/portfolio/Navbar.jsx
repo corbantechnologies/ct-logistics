@@ -10,7 +10,6 @@ function Navbar() {
       {/* Left - Title */}
       <h5 className="fw-bold">Dashboard</h5>
 
-      {/* Right - Notifications & Profile */}
       <div className="d-flex align-items-center">
         <div className="dropdown">
           <button

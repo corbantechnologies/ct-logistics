@@ -12,7 +12,7 @@ function BusinessDetailLayout({ children, params }) {
           <Sidebar slug={slug?.slug} />
         </div>
         <div className="col-lg-10 offset-lg-2 col-sm-12 vh-100 overflow-auto">
-          <Navbar />
+          <Navbar slug={slug?.slug} />
           {children}
         </div>
       </div>
