@@ -1,5 +1,5 @@
-import Navbar from "@/components/business/Navbar";
-import Sidebar from "@/components/business/Sidebar";
+import Navbar from "@/components/portfolio/Navbar";
+import Sidebar from "@/components/portfolio/Sidebar";
 import React from "react";
 
 function BusinessLayout({ children }) {

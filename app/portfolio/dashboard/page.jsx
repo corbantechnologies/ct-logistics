@@ -30,7 +30,7 @@ function Dashboard() {
 
   return (
     <div className="container mt-4">
-      <h2 className="mb-4">Business Dashboard</h2>
+      <h2 className="mb-4">Personal Dashboard</h2>
 
       {/* Summary Stats */}
       <div className="row mb-4">
@@ -48,7 +48,7 @@ function Dashboard() {
             <p className="text-muted">Warehouses</p>
           </div>
         </div>
-        <div className="col-md-4 mb-3 col-sm-12">
+        <div className="col-md-4 mb-3 col-sm-12">       
           <div className="card shadow-sm p-3 d-flex align-items-center">
             <FaBox className="fs-1 text-warning mb-2" />
             <h5>{totalProducts}</h5>

@@ -1,16 +1,35 @@
 "use client";
 import { signOut } from "next-auth/react";
 import React from "react";
-import { FaBell, FaSignOutAlt, FaUserCircle } from "react-icons/fa";
+import {
+  FaBell,
+  FaBriefcase,
+  FaSignOutAlt,
+  FaUserCircle,
+} from "react-icons/fa";
 import Link from "next/link";
+import { useFetchBusiness } from "@/hooks/business/actions";
+import LoadingSpinner from "../dashboard/LoadingSpinner";
 
-function Navbar() {
+function Navbar({ slug }) {
+  const {
+    isLoading: isLoadingBusiness,
+    data: business,
+    isError: isErrorBusiness,
+    refetch: refetchBusiness,
+  } = useFetchBusiness(slug);
+
+  if (isLoadingBusiness) {
+    return <LoadingSpinner />;
+  }
+
   return (
     <nav className="d-flex justify-content-between align-items-center p-3 bg-white shadow-sm">
       {/* Left - Title */}
-      <h5 className="fw-bold">Dashboard</h5>
+      <Link href={`/business/${slug}`} className="fw-bold text-decoration-none">
+        {business?.name}
+      </Link>
 
-      {/* Right - Notifications & Profile */}
       <div className="d-flex align-items-center">
         <div className="dropdown">
           <button
@@ -18,22 +37,57 @@ function Navbar() {
             type="button"
             data-bs-toggle="dropdown"
           >
-            <FaUserCircle className="fs-4" />
+            <FaBriefcase className="fs-4" />
           </button>
           <ul className="dropdown-menu dropdown-menu-end">
             <li>
-              <Link className="dropdown-item" href="/portfolio/settings">
+              <Link
+                className="dropdown-item"
+                href={`/business/${slug}/warehouses`}
+              >
+                Warehouses
+              </Link>
+            </li>
+            <li>
+              <Link
+                className="dropdown-item"
+                href={`/business/${slug}/products`}
+              >
+                Products & Inventory
+              </Link>
+            </li>
+            <li>
+              <Link
+                className="dropdown-item"
+                href={`/business/${slug}/categories`}
+              >
+                Categories
+              </Link>
+            </li>
+            <li>
+              <Link
+                className="dropdown-item"
+                href={`/business/${slug}/stock-movement`}
+              >
+                Stock Movement
+              </Link>
+            </li>
+            <li>
+              <Link
+                className="dropdown-item"
+                href={`/business/${slug}/settings`}
+              >
                 Settings
               </Link>
             </li>
           </ul>
         </div>
-        <FaSignOutAlt
-          className="fs-4 ms-3 text-danger"
-          role="button"
-          title="Logout"
-          onClick={() => signOut()}
-        />
+        <Link
+          href="/portfolio/dashboard"
+          className="nav-link text-danger d-flex align-items-center p-2"
+        >
+          <FaSignOutAlt className="me-2" /> Exit
+        </Link>
       </div>
     </nav>
   );

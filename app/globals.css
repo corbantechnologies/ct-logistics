@@ -136,3 +136,16 @@ body {
     padding: 20px;
     border-radius: 10px;
 }
+
+/* Dashboard cards */
+.hover-card {
+    transition: transform 0.2s ease-in-out, background-color 0.2s ease-in-out;
+    border-radius: 8px;
+}
+
+.hover-card:hover {
+    transform: scale(1.05);
+    cursor: pointer;
+    background-color: #f8f9fa;
+    /* Light grey background on hover */
+}
