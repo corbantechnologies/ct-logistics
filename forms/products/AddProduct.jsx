@@ -54,39 +54,9 @@ function AddProduct({ refetch, closeModal, business, categories, warehouses }) {
     >
       {({ isSubmitting }) => (
         <Form>
-          {/* Category Selection */}
-          <div className="mb-3">
-            <label htmlFor="category" className="form-label">
-              Category
-            </label>
-            <Field as="select" name="category" className="form-select">
-              <option value="">Select a category</option>
-              {categories?.map((category) => (
-                <option key={category?.reference} value={category?.reference}>
-                  {category?.name}
-                </option>
-              ))}
-            </Field>
-          </div>
-
-          {/* Warehouse Selection */}
-          <div className="mb-3">
-            <label htmlFor="warehouse" className="form-label">
-              Warehouse
-            </label>
-            <Field as="select" name="warehouse" className="form-select">
-              <option value="">Select a warehouse</option>
-              {warehouses?.map((warehouse) => (
-                <option key={warehouse?.reference} value={warehouse?.reference}>
-                  {warehouse?.name}
-                </option>
-              ))}
-            </Field>
-          </div>
-
           {/* Product Name */}
           <div className="mb-3">
-            <label htmlFor="name" className="form-label">
+            <label htmlFor="name" className="form-label fw-semibold">
               Product Name
             </label>
             <Field
@@ -104,7 +74,7 @@ function AddProduct({ refetch, closeModal, business, categories, warehouses }) {
 
           {/* Description */}
           <div className="mb-3">
-            <label htmlFor="description" className="form-label">
+            <label htmlFor="description" className="form-label fw-semibold">
               Description
             </label>
             <Field
@@ -123,7 +93,7 @@ function AddProduct({ refetch, closeModal, business, categories, warehouses }) {
 
           {/* Price */}
           <div className="mb-3">
-            <label htmlFor="price" className="form-label">
+            <label htmlFor="price" className="form-label fw-semibold">
               Price
             </label>
             <Field
@@ -141,7 +111,7 @@ function AddProduct({ refetch, closeModal, business, categories, warehouses }) {
 
           {/* Stock */}
           <div className="mb-3">
-            <label htmlFor="stock" className="form-label">
+            <label htmlFor="stock" className="form-label fw-semibold">
               Stock Quantity
             </label>
             <Field
@@ -159,7 +129,7 @@ function AddProduct({ refetch, closeModal, business, categories, warehouses }) {
 
           {/* Discount */}
           <div className="mb-3">
-            <label htmlFor="discount" className="form-label">
+            <label htmlFor="discount" className="form-label fw-semibold">
               Discount (%)
             </label>
             <Field
@@ -173,6 +143,36 @@ function AddProduct({ refetch, closeModal, business, categories, warehouses }) {
               component="div"
               className="text-danger small"
             />
+          </div>
+
+          {/* Category Selection */}
+          <div className="mb-3">
+            <label htmlFor="category" className="form-label fw-semibold">
+              Category
+            </label>
+            <Field as="select" name="category" className="form-select">
+              <option value="">Select a category</option>
+              {categories?.map((category) => (
+                <option key={category?.reference} value={category?.reference}>
+                  {category?.name}
+                </option>
+              ))}
+            </Field>
+          </div>
+
+          {/* Warehouse Selection */}
+          <div className="mb-3">
+            <label htmlFor="warehouse" className="form-label fw-semibold">
+              Warehouse
+            </label>
+            <Field as="select" name="warehouse" className="form-select">
+              <option value="">Select a warehouse</option>
+              {warehouses?.map((warehouse) => (
+                <option key={warehouse?.reference} value={warehouse?.reference}>
+                  {warehouse?.name}
+                </option>
+              ))}
+            </Field>
           </div>
 
           {/* Submit Button */}
