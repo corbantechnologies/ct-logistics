@@ -1,4 +1,5 @@
 "use client";
+import Link from "next/link";
 import React from "react";
 
 function HeroSectionTwoColumns() {
@@ -16,9 +17,9 @@ function HeroSectionTwoColumns() {
               delivery routes seamlessly.
             </p>
             <div className="mt-4">
-              <a href="/signup" className="btn btn-primary btn-lg me-3">
+              <Link href="/auth/login" className="btn btn-primary btn-lg me-3">
                 Get Started
-              </a>
+              </Link>
               <button className="btn btn-outline-primary btn-lg">
                 Watch Demo
               </button>
