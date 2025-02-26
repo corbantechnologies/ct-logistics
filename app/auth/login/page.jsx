@@ -76,6 +76,9 @@ function Login() {
         <div className="text-center mt-3">
           <Link href="/auth/forgot-password">Forgot Password?</Link>
         </div>
+        <div className="text-center mt-3">
+          <Link href="/auth/business/signup">Create Account</Link>
+        </div>
       </div>
     </div>
   );
