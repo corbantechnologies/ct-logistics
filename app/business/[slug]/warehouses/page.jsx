@@ -41,7 +41,7 @@ function BusinessWarehouses() {
       <Modal
         show={show}
         onHide={handleClose}
-        dialogClassName="modal-dialog modal-dialog-scrollable"
+        dialogClassName="modal-dialog modal-dialog-scrollable modal-dialog-centered"
       >
         <div className="modal-header">
           <h5 className="modal-title fw-bold">Add Warehouse</h5>
