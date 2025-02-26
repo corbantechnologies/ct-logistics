@@ -21,8 +21,8 @@ function AddCategory({ refetch, closeModal, business }) {
 
           try {
             await createCategory(values, axios);
-            refetch(); // Refresh categories
-            closeModal(); // Close modal
+            refetch();
+            closeModal();
             toast.success("Category created successfully");
           } catch (error) {
             toast.error("Failed to create category");
