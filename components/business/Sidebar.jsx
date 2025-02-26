@@ -28,11 +28,11 @@ function Sidebar() {
     //   icon: <FaShoppingCart />,
     // },
     // { name: "Customers", href: "/portfolio/customers", icon: <FaUsers /> },
-    {
-      name: "Products & Inventory",
-      href: "/portfolio/products",
-      icon: <FaBox />,
-    },
+    // {
+    //   name: "Products & Inventory",
+    //   href: "/portfolio/products",
+    //   icon: <FaBox />,
+    // },
     // { name: "Payments", href: "/portfolio/payments", icon: <FaMoneyBillWave /> },
     // { name: "Reports", href: "/portfolio/reports", icon: <FaChartBar /> },
     { name: "Settings", href: "/portfolio/settings", icon: <FaCog /> },
