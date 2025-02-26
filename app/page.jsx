@@ -1,7 +1,7 @@
 import CallToAction from "@/components/landing/CallToAction";
 import FeaturesSection from "@/components/landing/FeatureSection";
 import Footer from "@/components/landing/Footer";
-import HeroSection from "@/components/landing/Hero";
+import HeroSectionTwoColumns from "@/components/landing/HeroTwoSection";
 import HowItWorks from "@/components/landing/HowItWorks";
 import Testimonials from "@/components/landing/Testimonials";
 import React from "react";
@@ -9,7 +9,7 @@ import React from "react";
 function LandingPage() {
   return (
     <>
-      <HeroSection />
+    <HeroSectionTwoColumns />
       <FeaturesSection />
       <HowItWorks />
       <Testimonials />

@@ -114,6 +114,15 @@ body {
     height: 100vh;
     background: url('/warehouse.png') no-repeat center center/cover;
 }
+.hero-section-two {
+    background-color: #f8f9fa;
+}
+
+.hero-section-two img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
 
 /* Features */
 .feature-icon {
