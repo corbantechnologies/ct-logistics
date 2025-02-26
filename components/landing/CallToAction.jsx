@@ -1,4 +1,5 @@
 "use client";
+import Link from "next/link";
 import React from "react";
 
 function CallToAction() {
@@ -9,9 +10,9 @@ function CallToAction() {
         <p className="lead">
           Efficient warehouse & logistics management at your fingertips.
         </p>
-        <a href="/signup" className="btn btn-light btn-lg mt-3">
+        <Link href="/auth/business/signup" className="btn btn-light btn-lg mt-3">
           Sign Up Now
-        </a>
+        </Link>
       </div>
     </section>
   );
