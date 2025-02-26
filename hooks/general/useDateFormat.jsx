@@ -1,3 +1,4 @@
+"use client";
 import { format, parseISO } from "date-fns";
 
 function extractDate(timestamp) {

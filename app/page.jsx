@@ -13,7 +13,7 @@ function LandingPage() {
       <HeroSectionTwoColumns />
       <FeaturesSection />
       <HowItWorks />
-      <Testimonials />
+      {/* <Testimonials /> */}
       <CallToAction />
       <Footer />
     </>
