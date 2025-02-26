@@ -1,8 +1,10 @@
 "use client";
+import { useSession } from "next-auth/react";
 import Link from "next/link";
 import React from "react";
 
 function HeroSectionTwoColumns() {
+  const { data: session } = useSession();
   return (
     <section className="hero-section-two py-5">
       <div className="container">
@@ -17,11 +19,31 @@ function HeroSectionTwoColumns() {
               delivery routes seamlessly.
             </p>
             <div className="mt-4">
-              <Link href="/auth/login" className="btn btn-primary btn-lg me-3">
-                Get Started
-              </Link>
+              {session?.user?.is_business ? (
+                <Link
+                  href="/portfolio/dashboard"
+                  className="btn btn-primary btn-lg me-3"
+                >
+                  Dashboard
+                </Link>
+              ) : session?.user?.is_employee ? (
+                <Link
+                  href="/auth/login"
+                  className="btn btn-primary btn-lg me-3"
+                >
+                  Get Started
+                </Link>
+              ) : (
+                <Link
+                  href="/auth/login"
+                  className="btn btn-primary btn-lg me-3"
+                >
+                  Get Started
+                </Link>
+              )}
+
               <button className="btn btn-outline-primary btn-lg">
-                Watch Demo
+                View Pricing
               </button>
             </div>
           </div>
