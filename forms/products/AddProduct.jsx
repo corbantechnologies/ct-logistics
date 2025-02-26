@@ -12,8 +12,8 @@ function AddProduct({ refetch, closeModal, business, categories, warehouses }) {
 
   // Validation Schema
   const ProductSchema = Yup.object().shape({
-    category: Yup.string().required("Category is required"),
-    warehouse: Yup.string().required("Warehouse is required"),
+    // category: Yup.string().required("Category is required"),
+    // warehouse: Yup.string().required("Warehouse is required"),
     name: Yup.string().required("Product name is required"),
     description: Yup.string().required("Description is required"),
     price: Yup.number()
@@ -68,11 +68,6 @@ function AddProduct({ refetch, closeModal, business, categories, warehouses }) {
                 </option>
               ))}
             </Field>
-            <ErrorMessage
-              name="category"
-              component="div"
-              className="text-danger small"
-            />
           </div>
 
           {/* Warehouse Selection */}
@@ -88,11 +83,6 @@ function AddProduct({ refetch, closeModal, business, categories, warehouses }) {
                 </option>
               ))}
             </Field>
-            <ErrorMessage
-              name="warehouse"
-              component="div"
-              className="text-danger small"
-            />
           </div>
 
           {/* Product Name */}
