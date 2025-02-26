@@ -1,0 +1,21 @@
+{
+  "name": "Corban Technologies Logistics",
+  "short_name": "CT-Logistics",
+  "description": "CT-Logistics: Efficiently managing warehouses, optimizing routes, and streamlining distribution for businesses of all sizes.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#F8F9FA",
+  "theme_color": "#007BFF",
+  "icons": [
+    {
+      "src": "/icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
