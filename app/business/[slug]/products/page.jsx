@@ -82,10 +82,10 @@ function BusinessProducts() {
                   <tr key={product?.reference}>
                     <td>{index + 1}</td>
                     <td>{product?.name}</td>
-                    <td>{product?.category?.name || "N/A"}</td>
-                    <td>{product?.price?.toFixed(2)}</td>
+                    <td>{product?.category || "N/A"}</td>
+                    <td>{product?.price}</td>
                     <td>{product?.stock}</td>
-                    <td>{product?.warehouse?.name || "N/A"}</td>
+                    <td>{product?.warehouse || "N/A"}</td>
                   </tr>
                 ))}
               </tbody>

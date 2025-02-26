@@ -46,7 +46,6 @@ function AddProduct({ refetch, closeModal, business, categories, warehouses }) {
           closeModal();
           toast.success("Product created successfully");
         } catch (error) {
-          console.log(error);
           toast.error("Failed to create product");
         } finally {
           setLoading(false);
