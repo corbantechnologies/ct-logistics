@@ -42,13 +42,14 @@ function AddProduct({ refetch, closeModal, business, categories, warehouses }) {
         setLoading(true);
         try {
           const formData = new FormData();
-          formData.append("category", values.category);
-          formData.append("warehouse", values.warehouse);
-          formData.append("name", values.name);
-          formData.append("description", values.description);
-          formData.append("price", values.price);
-          formData.append("stock", values.stock);
-          formData.append("discount", values.discount);
+          formData.append("business", values?.business);
+          formData.append("category", values?.category);
+          formData.append("warehouse", values?.warehouse);
+          formData.append("name", values?.name);
+          formData.append("description", values?.description);
+          formData.append("price", values?.price);
+          formData.append("stock", values?.stock);
+          formData.append("discount", values?.discount);
 
           await createProduct(formData, axios);
           refetch();
