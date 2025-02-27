@@ -14,8 +14,8 @@ export const getProductDetail = async (slug, axios) => {
   return response?.data || {};
 };
 
-export const createProduct = async (values, axios) => {
-  await apiMultipartActions?.post("/api/products/", values, axios);
+export const createProduct = async (formData, axios) => {
+  await apiMultipartActions?.post("/api/products/", formData, axios);
 };
 
 export const updateProduct = async (slug, values, axios) => {
