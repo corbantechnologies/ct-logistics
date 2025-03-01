@@ -74,6 +74,8 @@ function ProductDetail() {
                 src={product?.image}
                 alt={product?.name}
                 className="img-fluid rounded"
+                width={100}
+                height={100}
               />
             ) : (
               <div className="text-muted">No image available</div>
@@ -83,7 +85,8 @@ function ProductDetail() {
           {/* Product Info */}
           <div className="col-md-8">
             <p>
-              <strong>Description:</strong>{" "}
+              <strong>Description:</strong>
+              <br />
               {product.description || "No description"}
             </p>
             <p>
@@ -109,7 +112,9 @@ function ProductDetail() {
             {/* Category Details */}
             {product.category_detail ? (
               <p>
-                <strong>Category:</strong> {product.category_detail.name}
+                <strong>Category:</strong>
+                <br />
+                {product.category_detail.name}
               </p>
             ) : (
               <p className="text-muted">No category assigned</p>
