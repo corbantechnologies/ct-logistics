@@ -1,7 +1,11 @@
 "use client";
 import { useQuery } from "@tanstack/react-query";
 import useAxiosAuth from "../general/useAxiosAuth";
-import { getProductDetail, getProducts } from "@/services/products";
+import {
+  getProductDetail,
+  getProducts,
+  getPublicProductDetail,
+} from "@/services/products";
 
 export function useFetchProducts() {
   const axios = useAxiosAuth();
@@ -19,5 +23,13 @@ export function useFetchProduct(slug) {
     queryKey: ["product", slug],
     queryFn: () => getProductDetail(slug, axios),
     enabled: !!slug,
+  });
+}
+
+export function useFetcPublicProduct(reference) {
+  return useQuery({
+    queryKey: ["product", reference],
+    queryFn: () => getPublicProductDetail(reference),
+    enabled: !!reference,
   });
 }

@@ -2,6 +2,7 @@
 import LoadingSpinner from "@/components/dashboard/LoadingSpinner";
 import AddProduct from "@/forms/products/AddProduct";
 import { useFetchBusiness } from "@/hooks/business/actions";
+import Link from "next/link";
 import { useParams } from "next/navigation";
 import React, { useState } from "react";
 import Modal from "react-bootstrap/Modal";
@@ -75,6 +76,7 @@ function BusinessProducts() {
                   <th>Price</th>
                   <th>Stock</th>
                   <th>Warehouse</th>
+                  <th>Actions</th>
                 </tr>
               </thead>
               <tbody>
@@ -82,10 +84,18 @@ function BusinessProducts() {
                   <tr key={product?.reference}>
                     <td>{index + 1}</td>
                     <td>{product?.name}</td>
-                    <td>{product?.category || "N/A"}</td>
+                    <td>{product?.category_detail?.name || "N/A"}</td>
                     <td>{product?.price}</td>
                     <td>{product?.stock}</td>
-                    <td>{product?.warehouse || "N/A"}</td>
+                    <td>{product?.warehouse_detail?.name || "N/A"}</td>
+                    <td>
+                      <Link
+                        href={`/business/${slug}/products/${product?.slug}`}
+                        className="btn btn-sm btn-primary"
+                      >
+                        View
+                      </Link>
+                    </td>
                   </tr>
                 ))}
               </tbody>

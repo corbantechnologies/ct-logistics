@@ -29,6 +29,7 @@ function AddProduct({ refetch, closeModal, business, categories, warehouses }) {
     <Formik
       initialValues={{
         business: business?.reference,
+        image: null,
         category: "",
         warehouse: "",
         name: "",
@@ -42,6 +43,9 @@ function AddProduct({ refetch, closeModal, business, categories, warehouses }) {
         setLoading(true);
         try {
           const formData = new FormData();
+          if (values?.image) {
+            formData.append("image", values?.image);
+          }
           formData.append("business", values?.business);
           formData.append("category", values?.category);
           formData.append("warehouse", values?.warehouse);
@@ -62,8 +66,23 @@ function AddProduct({ refetch, closeModal, business, categories, warehouses }) {
         }
       }}
     >
-      {({ isSubmitting }) => (
+      {({ isSubmitting, setFieldValue }) => (
         <Form>
+          {/* Product Image */}
+          <div className="mb-3">
+            <label htmlFor="image" className="form-label fw-semibold">
+              Product Image
+            </label>
+            <input
+              type="file"
+              name="image"
+              id="image"
+              className="form-control"
+              onChange={(event) => {
+                setFieldValue("image", event.currentTarget.files[0]);
+              }}
+            />
+          </div>
           {/* Product Name */}
           <div className="mb-3">
             <label htmlFor="name" className="form-label fw-semibold">
