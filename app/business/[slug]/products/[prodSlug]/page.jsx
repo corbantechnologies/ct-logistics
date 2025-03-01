@@ -90,13 +90,18 @@ function ProductDetail() {
               {product.description || "No description"}
             </p>
             <p>
-              <strong>Price:</strong> ${product.price}
+              <strong>Price:</strong>
+              <br />${product.price}
             </p>
             <p>
-              <strong>Stock:</strong> {product.stock}
+              <strong>Stock:</strong>
+              <br />
+              {product.stock}
             </p>
             <p>
-              <strong>Discount:</strong> {product.discount}%
+              <strong>Discount:</strong>
+              <br />
+              {product.discount}%
             </p>
 
             {/* Warehouse Details */}

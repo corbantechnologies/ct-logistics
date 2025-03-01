@@ -25,3 +25,10 @@ export const updateProduct = async (slug, formData, axios) => {
 export const deleteProduct = async (slug, axios) => {
   await apiMultipartActions?.delete(`/api/products/${slug}/`, axios);
 };
+
+export const getPublicProductDetail = async (reference) => {
+  const response = await apiMultipartActions?.get(
+    `/api/products/qrcode/${reference}/`
+  );
+  return response?.data || {};
+};
