@@ -216,6 +216,13 @@ function AddProduct({ refetch, closeModal, business, categories, warehouses }) {
           {/* Submit Button */}
           <div className="d-flex justify-content-end">
             <button
+              type="button"
+              className="btn btn-secondary me-2"
+              onClick={closeModal}
+            >
+              Cancel
+            </button>
+            <button
               type="submit"
               className="btn btn-primary"
               disabled={isSubmitting || loading}
