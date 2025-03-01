@@ -46,7 +46,7 @@ function ProductPublicDetail() {
                 {product?.description || "No description available"}
               </p>
 
-              <h4 className="text-primary fw-bold">Price: ${product?.price}</h4>
+              <h4 className="text-primary fw-bold">Price: {product?.price}</h4>
               <p
                 className={product?.stock > 0 ? "text-success" : "text-danger"}
               >
