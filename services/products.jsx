@@ -18,8 +18,8 @@ export const createProduct = async (formData, axios) => {
   await apiMultipartActions?.post("/api/products/", formData, axios);
 };
 
-export const updateProduct = async (slug, values, axios) => {
-  await apiMultipartActions?.patch(`/api/products/${slug}/`, values, axios);
+export const updateProduct = async (slug, formData, axios) => {
+  await apiMultipartActions?.patch(`/api/products/${slug}/`, formData, axios);
 };
 
 export const deleteProduct = async (slug, axios) => {
