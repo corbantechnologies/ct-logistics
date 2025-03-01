@@ -135,13 +135,19 @@ function ProductDetail() {
                   <p>
                     <strong>Barcode:</strong>
                   </p>
-                  <img
-                    src={product?.barcode}
-                    alt="Barcode"
-                    className="img-fluid"
-                    width={200}
-                    height={50}
-                  />
+                  {/* make downloadable */}
+                  <Link
+                    href={`/business/${slug}/products/${prodSlug}`}
+                    download
+                  >
+                    <img
+                      src={product?.barcode}
+                      alt="Barcode"
+                      className="img-fluid"
+                      width={200}
+                      height={50}
+                    />
+                  </Link>
                 </div>
               )}
               {product.qrcode && (
@@ -149,13 +155,19 @@ function ProductDetail() {
                   <p>
                     <strong>QR Code:</strong>
                   </p>
-                  <img
-                    width={100}
-                    height={100}
-                    src={product?.qrcode}
-                    alt="QR Code"
-                    className="img-fluid"
-                  />
+                  <Link
+                    href={`/product/${product?.reference}`}
+                    className="text-decoration-none"
+                    download
+                  >
+                    <img
+                      width={100}
+                      height={100}
+                      src={product?.qrcode}
+                      alt="QR Code"
+                      className="img-fluid"
+                    />
+                  </Link>
                 </div>
               )}
             </div>
