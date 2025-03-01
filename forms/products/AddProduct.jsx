@@ -67,7 +67,7 @@ function AddProduct({ refetch, closeModal, business, categories, warehouses }) {
       }}
     >
       {({ isSubmitting, setFieldValue }) => (
-        <Form>
+        <Form className="container">
           <div className="row">
             {/* Product Image */}
             <div className="mb-3 col-md-6 col-sm-12">
