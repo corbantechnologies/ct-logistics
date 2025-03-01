@@ -68,37 +68,39 @@ function AddProduct({ refetch, closeModal, business, categories, warehouses }) {
     >
       {({ isSubmitting, setFieldValue }) => (
         <Form>
-          {/* Product Image */}
-          <div className="mb-3">
-            <label htmlFor="image" className="form-label fw-semibold">
-              Product Image
-            </label>
-            <input
-              type="file"
-              name="image"
-              id="image"
-              className="form-control"
-              onChange={(event) => {
-                setFieldValue("image", event.currentTarget.files[0]);
-              }}
-            />
-          </div>
-          {/* Product Name */}
-          <div className="mb-3">
-            <label htmlFor="name" className="form-label fw-semibold">
-              Product Name
-            </label>
-            <Field
-              type="text"
-              name="name"
-              className="form-control"
-              placeholder="Enter product name"
-            />
-            <ErrorMessage
-              name="name"
-              component="div"
-              className="text-danger small"
-            />
+          <div className="row">
+            {/* Product Image */}
+            <div className="mb-3 col-md-6 col-sm-12">
+              <label htmlFor="image" className="form-label fw-semibold">
+                Product Image
+              </label>
+              <input
+                type="file"
+                name="image"
+                id="image"
+                className="form-control"
+                onChange={(event) => {
+                  setFieldValue("image", event.currentTarget.files[0]);
+                }}
+              />
+            </div>
+            {/* Product Name */}
+            <div className="mb-3 col-md-6 col-sm-12">
+              <label htmlFor="name" className="form-label fw-semibold">
+                Product Name
+              </label>
+              <Field
+                type="text"
+                name="name"
+                className="form-control"
+                placeholder="Enter product name"
+              />
+              <ErrorMessage
+                name="name"
+                component="div"
+                className="text-danger small"
+              />
+            </div>
           </div>
 
           {/* Description */}
@@ -120,88 +122,95 @@ function AddProduct({ refetch, closeModal, business, categories, warehouses }) {
             />
           </div>
 
-          {/* Price */}
-          <div className="mb-3">
-            <label htmlFor="price" className="form-label fw-semibold">
-              Price
-            </label>
-            <Field
-              type="number"
-              name="price"
-              className="form-control"
-              placeholder="Enter price"
-            />
-            <ErrorMessage
-              name="price"
-              component="div"
-              className="text-danger small"
-            />
+          <div className="row">
+            {/* Price */}
+            <div className="mb-3 col-md-4 col-sm-12">
+              <label htmlFor="price" className="form-label fw-semibold">
+                Price
+              </label>
+              <Field
+                type="number"
+                name="price"
+                className="form-control"
+                placeholder="Enter price"
+              />
+              <ErrorMessage
+                name="price"
+                component="div"
+                className="text-danger small"
+              />
+            </div>
+
+            {/* Stock */}
+            <div className="mb-3 col-md-4 col-sm-12">
+              <label htmlFor="stock" className="form-label fw-semibold">
+                Stock Quantity
+              </label>
+              <Field
+                type="number"
+                name="stock"
+                className="form-control"
+                placeholder="Enter stock quantity"
+              />
+              <ErrorMessage
+                name="stock"
+                component="div"
+                className="text-danger small"
+              />
+            </div>
+
+            {/* Discount */}
+            <div className="mb-3 col-md-4 col-sm-12">
+              <label htmlFor="discount" className="form-label fw-semibold">
+                Discount (%)
+              </label>
+              <Field
+                type="number"
+                name="discount"
+                className="form-control"
+                placeholder="Enter discount percentage"
+              />
+              <ErrorMessage
+                name="discount"
+                component="div"
+                className="text-danger small"
+              />
+            </div>
           </div>
 
-          {/* Stock */}
-          <div className="mb-3">
-            <label htmlFor="stock" className="form-label fw-semibold">
-              Stock Quantity
-            </label>
-            <Field
-              type="number"
-              name="stock"
-              className="form-control"
-              placeholder="Enter stock quantity"
-            />
-            <ErrorMessage
-              name="stock"
-              component="div"
-              className="text-danger small"
-            />
-          </div>
+          <div className="row">
+            {/* Category Selection */}
+            <div className="mb-3 col-md-6 col-sm-12">
+              <label htmlFor="category" className="form-label fw-semibold">
+                Category
+              </label>
+              <Field as="select" name="category" className="form-select">
+                <option value="">Select a category</option>
+                {categories?.map((category) => (
+                  <option key={category?.reference} value={category?.reference}>
+                    {category?.name}
+                  </option>
+                ))}
+              </Field>
+            </div>
 
-          {/* Discount */}
-          <div className="mb-3">
-            <label htmlFor="discount" className="form-label fw-semibold">
-              Discount (%)
-            </label>
-            <Field
-              type="number"
-              name="discount"
-              className="form-control"
-              placeholder="Enter discount percentage"
-            />
-            <ErrorMessage
-              name="discount"
-              component="div"
-              className="text-danger small"
-            />
-          </div>
-
-          {/* Category Selection */}
-          <div className="mb-3">
-            <label htmlFor="category" className="form-label fw-semibold">
-              Category
-            </label>
-            <Field as="select" name="category" className="form-select">
-              <option value="">Select a category</option>
-              {categories?.map((category) => (
-                <option key={category?.reference} value={category?.reference}>
-                  {category?.name}
-                </option>
-              ))}
-            </Field>
-          </div>
-
-          {/* Warehouse Selection */}
-          <div className="mb-3">
-            <label htmlFor="warehouse" className="form-label fw-semibold">
-              Warehouse
-            </label>
-            <Field as="select" name="warehouse" className="form-select">
-              <option value="">Select a warehouse</option>
-              {warehouses?.map((warehouse) => (
-                <option key={warehouse?.reference} value={warehouse?.reference}>
-                  {warehouse?.name}
-                </option>
-              ))}
-            </Field>
+            {/* Warehouse Selection */}
+            <div className="mb-3 col-md-6 col-sm-12">
+              <label htmlFor="warehouse" className="form-label fw-semibold">
+                Warehouse
+              </label>
+              <Field as="select" name="warehouse" className="form-select">
+                <option value="">Select a warehouse</option>
+                {warehouses?.map((warehouse) => (
+                  <option
+                    key={warehouse?.reference}
+                    value={warehouse?.reference}
+                  >
+                    {warehouse?.name}
+                  </option>
+                ))}
+              </Field>
+            </div>
           </div>
 
           {/* Submit Button */}
