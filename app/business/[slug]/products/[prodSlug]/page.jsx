@@ -3,6 +3,7 @@ import LoadingSpinner from "@/components/dashboard/LoadingSpinner";
 import useAxiosAuth from "@/hooks/general/useAxiosAuth";
 import { useFetchProduct } from "@/hooks/products/actions";
 import { deleteProduct } from "@/services/products";
+import Image from "next/image";
 import Link from "next/link";
 import { useParams, useRouter } from "next/navigation";
 import React, { useState } from "react";
@@ -125,6 +126,8 @@ function ProductDetail() {
                     src={product?.barcode}
                     alt="Barcode"
                     className="img-fluid"
+                    width={200}
+                    height={50}
                   />
                 </div>
               )}
@@ -134,6 +137,8 @@ function ProductDetail() {
                     <strong>QR Code:</strong>
                   </p>
                   <img
+                    width={100}
+                    height={100}
                     src={product?.qrcode}
                     alt="QR Code"
                     className="img-fluid"
