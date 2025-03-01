@@ -84,10 +84,10 @@ function BusinessProducts() {
                   <tr key={product?.reference}>
                     <td>{index + 1}</td>
                     <td>{product?.name}</td>
-                    <td>{product?.category || "N/A"}</td>
+                    <td>{product?.category_detail?.name || "N/A"}</td>
                     <td>{product?.price}</td>
                     <td>{product?.stock}</td>
-                    <td>{product?.warehouse || "N/A"}</td>
+                    <td>{product?.warehouse_detail?.name || "N/A"}</td>
                     <td>
                       <Link
                         href={`/business/${slug}/products/${product?.slug}`}
