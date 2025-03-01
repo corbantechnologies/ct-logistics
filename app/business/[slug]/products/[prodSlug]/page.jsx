@@ -1,20 +1,40 @@
 "use client";
 import LoadingSpinner from "@/components/dashboard/LoadingSpinner";
+import useAxiosAuth from "@/hooks/general/useAxiosAuth";
 import { useFetchProduct } from "@/hooks/products/actions";
+import { deleteProduct } from "@/services/products";
 import Link from "next/link";
-import { useParams } from "next/navigation";
-import React from "react";
+import { useParams, useRouter } from "next/navigation";
+import React, { useState } from "react";
+import toast from "react-hot-toast";
 
 function ProductDetail() {
   const params = useParams();
   const slug = params?.slug;
   const prodSlug = params?.prodSlug;
 
+  const [deleting, setDeleting] = useState(false);
+  const axios = useAxiosAuth();
+  const router = useRouter();
+
   const {
     isLoading: isLoadingProduct,
     data: product,
     refetch: refetchProduct,
   } = useFetchProduct(prodSlug);
+
+  const handleDeleteProduct = async (prodSlug) => {
+    setDeleting(true);
+    try {
+      await deleteProduct(prodSlug, axios);
+      toast?.success("Product deleted successfully");
+      router?.push(`/business/${slug}/products`);
+    } catch (error) {
+      toast?.error("Error deleting product");
+    } finally {
+      setDeleting(false);
+    }
+  };
 
   if (isLoadingProduct) {
     return <LoadingSpinner />;
@@ -33,7 +53,7 @@ function ProductDetail() {
             <Link href={`/business/${slug}`}>Dashboard</Link>
           </li>
           <li className="breadcrumb-item active" aria-current="page">
-            {product?.reference}
+            {product?.sku}
           </li>
         </ol>
       </nav>
@@ -127,10 +147,15 @@ function ProductDetail() {
 
       {/* Action Buttons */}
       <div className="mt-4">
-        <Link href={`/business/${slug}/products/${product.reference}/edit`}>
+        <Link href={`/business/${slug}/products/${product?.slug}/edit`}>
           <button className="btn btn-primary me-2">Edit Product</button>
         </Link>
-        <button className="btn btn-danger">Delete Product</button>
+        <button
+          onClick={() => handleDeleteProduct(product?.slug)}
+          className="btn btn-danger"
+        >
+          {deleting ? "Deleting ..." : "Delete Product"}
+        </button>
       </div>
     </div>
   );
