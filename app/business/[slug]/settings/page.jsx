@@ -35,6 +35,7 @@ function BusinessDetailSettings() {
             name: business?.name || "",
             contact: business?.contact || "",
             location: business?.location || "",
+            currency: business?.currency || "",
           }}
           onSubmit={async (values) => {
             setLoading(true);
@@ -43,6 +44,7 @@ function BusinessDetailSettings() {
               formData.append("name", values.name);
               formData.append("contact", values.contact);
               formData.append("location", values.location);
+              formData.append("currency", values.currency);
 
               await updateBusiness(slug, formData, axios);
               refetchBusiness();
@@ -91,6 +93,32 @@ function BusinessDetailSettings() {
                   onChange={handleChange}
                   value={values.location}
                 />
+              </div>
+
+              {/* Currency */}
+              <div className="mb-3">
+                <label className="form-label">Currency</label>
+                <Field as="select" name="currency" className="form-select">
+                  <option value={business?.currency}>
+                    {business?.currency || "Select Currency"}
+                  </option>
+                  <option value="KES">KES</option>
+                  <option value="USD">USD</option>
+                  <option value="EUR">EUR</option>
+                  <option value="GBP">GBP</option>
+                  <option value="JPY">JPY</option>
+                  <option value="CNY">CNY</option>
+                  <option value="INR">INR</option>
+                  <option value="RUB">RUB</option>
+                  <option value="BRL">BRL</option>
+                  <option value="IDR">IDR</option>
+                  <option value="MYR">MYR</option>
+                  <option value="PHP">PHP</option>
+                  <option value="SGD">SGD</option>
+                  <option value="THB">THB</option>
+                  <option value="VND">VND</option>
+                  <option value="ZAR">ZAR</option>
+                </Field>
               </div>
 
               {/* Submit Button */}
