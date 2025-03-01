@@ -91,7 +91,8 @@ function ProductDetail() {
             </p>
             <p>
               <strong>Price:</strong>
-              <br />${product.price}
+              <br />
+              {product.price}
             </p>
             <p>
               <strong>Stock:</strong>
@@ -107,7 +108,9 @@ function ProductDetail() {
             {/* Warehouse Details */}
             {product.warehouse_detail ? (
               <p>
-                <strong>Warehouse:</strong> {product.warehouse_detail.name} (
+                <strong>Warehouse:</strong>
+                <br />
+                {product.warehouse_detail.name} (
                 {product.warehouse_detail.address})
               </p>
             ) : (
