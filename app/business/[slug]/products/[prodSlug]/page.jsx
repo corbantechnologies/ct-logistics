@@ -139,6 +139,7 @@ function ProductDetail() {
                   <Link
                     href={`/business/${slug}/products/${prodSlug}`}
                     download
+                    className="text-decoration-none"
                   >
                     <img
                       src={product?.barcode}
