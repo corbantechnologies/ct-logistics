@@ -42,7 +42,7 @@ function BusinessProducts() {
       <Modal
         show={show}
         onHide={handleClose}
-        dialogClassName="modal-dialog modal-dialog-scrollable modal-dialog-centered"
+        dialogClassName="modal-dialog modal-fullscreen"
       >
         <div className="modal-header">
           <h5 className="modal-title fw-bold">Add Product</h5>
