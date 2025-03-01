@@ -160,6 +160,7 @@ function ProductDetail() {
                     href={`/product/${product?.reference}`}
                     className="text-decoration-none"
                     download
+                    target="_blank"
                   >
                     <img
                       width={100}
